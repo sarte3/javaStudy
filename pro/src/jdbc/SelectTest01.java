@@ -39,7 +39,7 @@ public class SelectTest01 {
 			//3-2. 쿼리 실행
 			sql = "select deptno, dname, loc";
 			sql += " from dept";
-			sql += " where deptno=90";
+			//sql += " where deptno=90";
 			
 			rs = stmt.executeQuery(sql);
 			
@@ -47,19 +47,19 @@ public class SelectTest01 {
 			while(rs.next()) {
 				
 				//rs.getXxx(String 타입의 컬럼명)
-				/*
+				
 				int deptno=rs.getInt("deptno");
 				String dname=rs.getString("dname");
 				String loc=rs.getString("loc");
 				
 				System.out.println(deptno+"\t"+dname+"\t"+loc);
-				*/
+				
 				
 				//Xxx getXxx(int columnIndex) : select 문의 컬럼 순서를 제시
-				int deptno=rs.getInt(1); 
+				//int deptno=rs.getInt(1); 
 				//여기에서는 select 문의 첫번째 컬럼인 deptno
-				String dname=rs.getString(2);
-				String loc=rs.getString(3);
+				//String dname=rs.getString(2);
+				//String loc=rs.getString(3);
 				
 				System.out.println(deptno+"\t"+dname+"\t"+loc);
 			}
