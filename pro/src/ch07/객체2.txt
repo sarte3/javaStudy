@@ -223,7 +223,7 @@ int result   = sum(10,20,30); 					  //메소드 호출 방법3
  		즉, 조상타입의 참조변수로 자손타입의 객체를 다룰 수 있는 것이 다형성.
  		
  
- *참조변수의 형변환 - 교재p356
+ *참조변수의 형변환 - 교재p356, ch11.ArrayList01참고
  
  *매개변수의 다형성 - 교재p367
  *instanceof연산자 - 교재p357
@@ -252,14 +252,51 @@ int result   = sum(10,20,30); 					  //메소드 호출 방법3
  Collection인터페이스 - 자손인터페이스 List, Set
  Collections클래스
  
- *ArrayList클래스 - 교재p584
-  -------------------------
+ *ArrayList클래스 - 교재p584, ch11
+ *HashSet클래스		- 교재p631, ch11
+-------------------------
   <데이터입출력구현>
   *DB연동 - 미리 제공해드린 JDBC 프로그래밍.pdf참고
    CRUD 문법
  
+ //각종 필요한 변수선언 - 예)conn, stmt, pstmt, rs, sql
+	try {
+		//1.드라이버 로딩
+		//2.Connection객체얻기
+		//3-1.실행객체-PreparedStatement객체,Statement객체
+		//3-2.쿼리문실행 - executeUpdate(): insert,update,delete
+		//				executeUpdate()의 리턴형태는 int
+		//				executeQuery() : select
+		//				executeQuery()의 리턴형태는 ResultSet
+		//4. 추가작업
+	}catch(Exception객체) { /*~~~~ */ }
+	finally{   /*5. 사용한 객체는 반납: 객체.close(); */ }
  
- 
+-------------------------
+*예외처리 -교재p414참고
+*예외처리하기 try~catch문	-교재p416
+*finally블럭 		   			-교재p434	
+
+*다중catch절   :
+ 주의. 하위Exception클래스부터 먼저 작성하고
+       상위Exception클래스는   뒤에  명시
+	
+try{
+		//코드
+		//위험코드
+		//위험코드
+}catch(하위Exception클래스명 참조변수){
+		//예외발생 처리 코드
+}catch(상위Exception클래스명 참조변수){
+		//예외발생 처리 코드
+}catch(Exception클래스명 참조변수){
+		//예외발생 처리 코드
+}finally{
+		//finally 블럭에는
+		//catch절에 들어가던 들어가지않던
+		//무조건 실행해야하는 코드를 작성한다
+		//예) DB연동시의 자원반납  
+} 
  
  
  

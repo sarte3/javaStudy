@@ -7,7 +7,7 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 
 //PreparedStatement 객체 이용 : 쿼리문을 미리 전달하여 나중에 실행
-public class SelectTest01 {
+public class SelectTest02 {
 
 	public static void main(String[] args) {
 
@@ -28,10 +28,9 @@ public class SelectTest01 {
 			conn = DriverManager.getConnection(url,user,password);
 			
 			//3-1.실행객체-PreparedStatement객체,Statement객체
-			String sql="select empno,ename,sal,hiredate " + 
-					"from emp " + 
-					"where empno>=7900 " + 
-					"order by empno desc";			
+			String sql="select mno,mname,mid,mpwd,mdate "
+					+ "from member "
+					+ "order by mno desc";			
 			pstmt = conn.prepareStatement(sql);
 			
 			//3-2.쿼리문실행 - executeUpdate(): insert,update,delete
@@ -40,14 +39,21 @@ public class SelectTest01 {
 			//				executeQuery()의 리턴형태는 ResultSet
 			rs = pstmt.executeQuery();
 			
+			
 			if(rs!=null) {
 				while(rs.next()) {
-					int empno = rs.getInt("empno");
-					String ename = rs.getString("ename");
-					double sal = rs.getDouble("sal");
-					Date hiredate = rs.getDate("hiredate");
+					MemberDTO mDTO = new MemberDTO();
 					
-					System.out.printf("%5d %10s %7.2f %s\n",empno, ename, sal, hiredate);
+					//여기에서는 member테이블의 mno컬럼의 값을 가져와서
+					//MemberDTO 클래스의 setmNO()메서드 파라미터로 제공하면
+					//MemberDTO 클래스의 필드에 데이터가 세팅된다
+					mDTO.setmNo(rs.getInt("mno"));
+					mDTO.setmName(rs.getString("mname"));
+					mDTO.setmId(rs.getString("mid"));
+					mDTO.setmPwd(rs.getString("mpwd"));
+					mDTO.setmDate(rs.getDate("mdate"));
+					
+					System.out.println(mDTO.toString());
 					
 				}
 			}
