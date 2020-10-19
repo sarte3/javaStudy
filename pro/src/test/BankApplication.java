@@ -1,4 +1,4 @@
-package test.q2;
+package test;
 
 public class BankApplication {
 	
@@ -84,7 +84,7 @@ public class BankApplication {
 		//해당계좌가 없으면 결과: 계좌가 없습니다.출력
 		
 		//해당계좌의 잔고조회하여 출력
-		account.setBalance(account.getBalance() - money);
+		
 		//결과: 예금이 성공되었습니다.출력
 	}	
 	
@@ -94,7 +94,7 @@ public class BankApplication {
 	private static Account findAccount(String ano) {
 		
 		//계좌수만큼 반복출력
-		
+		return null; //comment: 여기에서는 컴파일에러 발생을 막기위해 임시로 null을 리턴하였어요
 	}
 	
 }
