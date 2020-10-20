@@ -39,7 +39,7 @@ public class SelectTest02 {
 			//				executeQuery()의 리턴형태는 ResultSet
 			rs = pstmt.executeQuery();
 			
-			
+			//4. 추가작업
 			if(rs!=null) {
 				while(rs.next()) {
 					MemberDTO mDTO = new MemberDTO();
@@ -57,7 +57,7 @@ public class SelectTest02 {
 					
 				}
 			}
-			//4. 추가작업
+			
 			
 			
 		}catch(Exception e) { 
@@ -66,6 +66,7 @@ public class SelectTest02 {
 		finally{  
 		/*5. 사용한 객체는 반납: 객체.close(); */ 
 			try {
+				if(rs!=null)rs.close();
 				if(pstmt!=null)pstmt.close();
 				if(conn!=null)conn.close();
 			}catch(Exception e) {

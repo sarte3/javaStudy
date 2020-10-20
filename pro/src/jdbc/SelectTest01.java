@@ -1,10 +1,7 @@
 package jdbc;
 
-import java.sql.Connection;
-import java.sql.Date;
-import java.sql.DriverManager;
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
+import java.sql.*;
+
 
 //PreparedStatement 객체 이용 : 쿼리문을 미리 전달하여 나중에 실행
 public class SelectTest01 {
@@ -60,6 +57,7 @@ public class SelectTest01 {
 		finally{  
 		/*5. 사용한 객체는 반납: 객체.close(); */ 
 			try {
+				if(rs!=null)rs.close();
 				if(pstmt!=null)pstmt.close();
 				if(conn!=null)conn.close();
 			}catch(Exception e) {
