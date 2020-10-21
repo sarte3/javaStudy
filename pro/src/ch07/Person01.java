@@ -10,7 +10,7 @@ public class Person01 {
 	//field [접근제어자] [속성] 데이터타입 변수명 [= 초기값];
 	final String nation="Korean"; 
 	//국적 여기에서는 객체마다 공통적인 값을 가지므로 초기값을 부여
-	final String ssn; 
+	String ssn; 
 	//주민번호 여기에서는 객체 생성할 때마다 다른 값을 가지므로 초기값을 부여 x
 	String name; //이름
 	
@@ -19,7 +19,7 @@ public class Person01 {
 	//Person01(){	} 
 	//컴파일에러. 생성자는 final필드의 최종 초기화를 마쳐야 하는데 그렇지 않아서 에러 발생
 	
-	Person01(String ssn,String name){
+	public Person01(String ssn,String name){
 		this.ssn = ssn;
 		this.name = name;
 	}

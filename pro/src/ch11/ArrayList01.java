@@ -46,11 +46,24 @@ public class ArrayList01 {
 		
 		System.out.println();
 		
+		System.out.println("-----------------------------");
+		
+		//특정 인덱스에 있는 객체 삭제 : list.remove(index);
+		list.remove(2); //김구 제거
+		list.remove(2); //유재석 제거
+		
+		//특정 인덱스에 있는 객체 삭제 list.remove(object);
+		list.remove("강호동");
+		
+		System.out.println("-----------------------------");
+		
 		//향상된 for문 이용 - 모든 데이터 꺼내기
 		//for(타입 변수: 배열명 또는 컬렉션명){ }
 		for(Object tmp:list) {
 			System.out.println((String)tmp);
 		}
+		
+		
 		
 	}
 
