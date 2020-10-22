@@ -252,7 +252,7 @@ int result   = sum(10,20,30); 					  //메소드 호출 방법3
  Collection인터페이스 - 자손인터페이스 List, Set
  Collections클래스
  
- *Vector - 교재p
+ *Vector - 교재p  ch11.Vector01
   -ArrayList는 기존의 Vector를 개선한 것으로 구현원리와 기능적으로 동일
   
  
@@ -274,7 +274,39 @@ int result   = sum(10,20,30); 					  //메소드 호출 방법3
    	 ② 비순차적으로 데이터를 추가/삭제 - LinkedList가 빠름
    	 ③ 접근시간(access time) - ArrayList가 빠름
    	 
- *HashSet클래스		- 교재p631, ch11
+ *HashSet클래스		- 교재p631, ch11.HashSet02_ex,  MemberDTO_02참고
+    순서유지x, 중복허용x
+  HashSet은  객체를 저장하기 전에     
+   먼저  객체의 hashCode()를 호출해서  해시코드를 얻어낸다 .
+   이미  저장되어 있는 객체들의  해시코드와 비교한다.
+  만약 동일한 해시코드가 있다면  equals()메소드로  두 객체를 비교해서    true가 나오면
+  동일한 객체로 판단하고          중복저장을 하지 않다.
+  hashCode() 리턴값:true -> equals() 리턴값: true => (중복되니)저장x
+                  :false-> 다른 객체                         => (중복x)  저장
+ 
+ *참고
+  객체 해시코드란? : 객체를 식별할 하나의 정수값
+ Object의  hashCode()함수는   객체의 메모리 번지를 이용해서 해시코드를 만들기때문에 객체마다 다른 값을 가진다
+ 
+ *참고
+ 	Object클래스 - 교재p450
+ 	- equals(Object obj)함수 : 객체 자신과 주어진 객체(obj)를 비교한다. 같으면 true, 다르면 false.
+	 	- Object클래스에 정의된 equals()는 참조변수 값(객체의 주소)을 비교한다.
+	 	- equals()를 오버라이딩해서 인스턴스변수의 값을 비교하도록 바꾼다 
+ 
+  - hashCode()함수 : 객체의 해시코드(int타입의 정수)를 반환하는 메서드(해시함수)
+    - Object클래스의 hashCode()는 객체의 내부주소를 반환한다.
+    - equals()를 오버라이딩하면, hashCode()도 같이 오버라이딩 해야한다.
+      equals()의 결과가 true인 두 객체의 hash code는 같아야하기 때문
+      
+ /* equals(Object obj) 메소드 재정의시 - ch11.MemberDTO_02참고
+	 * 1.Object타입의 매개변수 obj에는  모든 객체가  매개값으로 제공될 수 있으므로
+	 *   instanceof 연산자롤  기준 객체와  동일타입인지 먼저 확인을 해야 한다
+	 *   동일타입이면  true를 반환
+	 * 2.비교객체가  동일한 타입이라면   기준 객체타입으로 강제타입변환해서
+	 *   특정 필드값이 동일한지 비교
+	 */   
+  
  
  *Iterator - 교재p614 
  	- 컬렉션에 저장된 요소들을 읽어오는 방법을 표준화한 것 
