@@ -41,7 +41,7 @@ public class PersonDTO implements Comparable<PersonDTO>{
 	public int compareTo(PersonDTO obj) {
 		
 		if(this.age<obj.age) {
-			return -1; //1
+			return -1; //1 내림차순
 		}else if(this.age==obj.age) {
 			return 0;
 		}else {

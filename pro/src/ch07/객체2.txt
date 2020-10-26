@@ -321,7 +321,7 @@ int result   = sum(10,20,30); 					  //메소드 호출 방법3
   객체 해시코드란? : 객체를 식별할 하나의 정수값
  Object의  hashCode()함수는   객체의 메모리 번지를 이용해서 해시코드를 만들기때문에 객체마다 다른 값을 가진다
  
- *TreeSet - 교재p638,ch11.PersonDTO_ex
+ *TreeSet - 교재p638,ch11.TreeSet,  ch11.PersonDTO_ex
  	- 범위 검색과 정렬에 유리한 이진 검색 트리(binary search tree)로 구현
  	    링크드 리스트처럼 각 요소(node)가  나무(tree)형태로 연결된 구조
  	- 이진 트리는 모든 노드가 최대 두 개의 하위 노드를 갖음(부모-자식관계)  
