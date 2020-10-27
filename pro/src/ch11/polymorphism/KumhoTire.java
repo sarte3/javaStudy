@@ -1,4 +1,4 @@
-package ch11;
+package ch11.polymorphism;
 
 public class KumhoTire extends Tire01 {
 

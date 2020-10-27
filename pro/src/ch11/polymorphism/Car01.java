@@ -1,4 +1,4 @@
-package ch11;
+package ch11.polymorphism;
 
 //이 클래스는 Tire01 클래스를 부품으로 가지는 클래스이다
 //자동차는 Tire를 가진다. Car01 has a Tirep01

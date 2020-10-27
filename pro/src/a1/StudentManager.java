@@ -1,4 +1,4 @@
-package test.Q4.LeeJeongSam;
+package a1;
 
 import java.util.HashMap;
 import java.util.Iterator;
@@ -6,7 +6,6 @@ import java.util.Map;
 import java.util.Map.Entry;
 import java.util.Scanner;
 import java.util.Set;
-import java.util.StringTokenizer;
 
 public class StudentManager {
 
@@ -34,22 +33,15 @@ static Scanner sc=new Scanner(System.in);
 			String data=null;
 			data=sc.nextLine();
 			
-			//StringTokenenizer 이용
-			StringTokenizer sData=new StringTokenizer(data, ", ");
-			
-			String[] str=new String[4];
-			int i=0;
-			
-			while(sData.hasMoreTokens()) {
-				str[i]=sData.nextToken();
-				i++;
-			}
-			
-			//String[] sData=data.split(", ");
-			String name=str[0];
-			String department=str[1];
-			String id=str[2];
-			double grade=Double.parseDouble(str[3]); 
+			//split메서드로 이름,학과,학번,평점 구분해 저장
+			//comment : String 클래스에서 split()함수가 문자열을 쪼개 배열에 저장해주는 함수였다면, 
+			//comment : StringTokenizer 클래스는 보다 간단하게 문자열을 토큰 단위로 나눠주는 함수가 있어요
+			//comment : StringTokenizer 클래스를 이용해보세요.
+			String[] sData=data.split(", ");
+			String name=sData[0];
+			String department=sData[1];
+			String id=sData[2];
+			double grade=Double.parseDouble(sData[3]);  
 			
 			//그것을 StudentDTO 객체에 저장한 후 map에 name을 키로 추가
 			StudentDTO sDTO=new StudentDTO(name, department, id, grade);
@@ -61,7 +53,8 @@ static Scanner sc=new Scanner(System.in);
 		printAll();
 	}
 
-	//모든 학생 정보를 출력하는 메서드
+	
+	//comment : 메서드에 주석을 달아보세요
 	public static void printAll() {
 		
 		//이름을 key로 StudentDTO를 value로 하여 set으로 변환후
@@ -84,7 +77,7 @@ static Scanner sc=new Scanner(System.in);
 		}
 	}
 	
-	//학생 이름을 받아서 해당 학생 정보를 불러오는 메서드
+	//comment : 메서드에 주석을 달아보세요
 	public static void run() {
 		
 		//학생 이름을 입력하면 해당 학생의 정보를 불러오게 함		
@@ -97,12 +90,14 @@ static Scanner sc=new Scanner(System.in);
 		
 	}
 	
-	//해당 학생 정보를 가져와 출력하는 메서드
+	//comment : 중복체크기능까지 추가하셨군요. 좋아요~
+	//comment : 정삼씨처럼 작성해도 되고,   중복체크기능을   StudentDTO에서 가지고 있을 수 도 있겠지요.
+	//comment : 메서드에 주석을 달아보세요
 	public static void processQuery(String name) {
 		
 		//입력된 이름과 같은 값이 있는지 확인 후, 정보 출력
 		if(map.containsKey(name)) {
-			
+			//comment : 불필요한 공백제거하세용
 			StudentDTO sDTO=map.get(name);
 			System.out.printf("%s, %s, %s, %.1f\n",sDTO.getName(),sDTO.getDepartment(),sDTO.getId(),sDTO.getGrade());
 			

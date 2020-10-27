@@ -1,4 +1,4 @@
-package ch11;
+package ch11.polymorphism;
 
 //이 클래스는 실행클래스로서 필드의 다형성을 살펴보고자 한다
 public class CarExample01 {

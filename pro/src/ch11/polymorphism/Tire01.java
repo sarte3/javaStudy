@@ -1,4 +1,4 @@
-package ch11;
+package ch11.polymorphism;
 
 //이 클래스의 direct subclass로 HankookTire, KumhoTire가 있다
 public class Tire01 {
