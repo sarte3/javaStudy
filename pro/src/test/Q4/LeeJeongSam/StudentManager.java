@@ -12,6 +12,7 @@ public class StudentManager {
 
 private static Map<String, StudentDTO> map=new HashMap<String, StudentDTO>();	
 static Scanner sc=new Scanner(System.in);
+//private static StudentDTO[] students=new StudentDTO[4];
 
 	public static void main(String[] args) {
 
@@ -36,23 +37,17 @@ static Scanner sc=new Scanner(System.in);
 			
 			//StringTokenenizer 이용
 			StringTokenizer sData=new StringTokenizer(data, ", ");
-			
-			String[] str=new String[4];
-			int i=0;
-			
-			while(sData.hasMoreTokens()) {
-				str[i]=sData.nextToken();
-				i++;
-			}
-			
+						
 			//String[] sData=data.split(", ");
-			String name=str[0];
-			String department=str[1];
-			String id=str[2];
-			double grade=Double.parseDouble(str[3]); 
+			String name=sData.nextToken();
+			String department=sData.nextToken();
+			String id=sData.nextToken();
+			double grade=Double.parseDouble(sData.nextToken()); 
 			
 			//그것을 StudentDTO 객체에 저장한 후 map에 name을 키로 추가
 			StudentDTO sDTO=new StudentDTO(name, department, id, grade);
+			//students[cnt-1]=new StudentDTO(name, department, id, grade);
+			
 			map.put(name,sDTO);
 			cnt++;
 		}
@@ -66,22 +61,31 @@ static Scanner sc=new Scanner(System.in);
 		
 		//이름을 key로 StudentDTO를 value로 하여 set으로 변환후
 		//iterator로 모두 꺼내 출력
-		Set<Entry<String, StudentDTO>> set=map.entrySet();
 		
-		Iterator<Entry<String, StudentDTO>> iter=set.iterator();
-		
-		while(iter.hasNext()) {
-			
-			Entry<String, StudentDTO> entry=iter.next();
-			
-			StudentDTO sDTO=entry.getValue();
-			System.out.println("--------------------------");
-			System.out.println("이름 : "+sDTO.getName());
-			System.out.println("학과 : "+sDTO.getDepartment());
-			System.out.println("학번 : "+sDTO.getId());
-			System.out.println("학점 평균 : "+sDTO.getGrade());
-			System.out.println("--------------------------");
-		}
+		  Set<Entry<String, StudentDTO>> set=map.entrySet();
+		  
+		  Iterator<Entry<String, StudentDTO>> iter=set.iterator();
+		  
+		  while(iter.hasNext()) {
+		  
+		  Entry<String, StudentDTO> entry=iter.next();
+		  
+		  StudentDTO sDTO=entry.getValue();
+		  System.out.println("--------------------------");
+		  System.out.println("이름 : "+sDTO.getName());
+		  System.out.println("학과 : "+sDTO.getDepartment());
+		  System.out.println("학번 : "+sDTO.getId());
+		  System.out.println("학점 평균 : "+sDTO.getGrade());
+		  System.out.println("--------------------------"); }
+		/*
+		 * for(int i=0;i<students.length;i++) {
+		 * System.out.println("--------------------------");
+		 * System.out.println("이름 : "+students[i].getName());
+		 * System.out.println("학과 : "+students[i].getDepartment());
+		 * System.out.println("학번 : "+students[i].getId());
+		 * System.out.println("학점 평균 : "+students[i].getGrade());
+		 * System.out.println("--------------------------"); }
+		 */
 	}
 	
 	//학생 이름을 받아서 해당 학생 정보를 불러오는 메서드
