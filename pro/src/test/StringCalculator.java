@@ -25,8 +25,8 @@ public class StringCalculator {
 	//계산기 실행 메소드, 입력값에 따라 계산, 클리어, 종료 기능을 수행한다
 	public void run() {
 		
-		String input=null;
-		Scanner sc=new Scanner(System.in);
+		String input = null;
+		Scanner sc = new Scanner(System.in);
 		
 		while(true) {
 			System.out.println("계산식을 입력하세요. Clear는 C, 종료하려면 Q를 누르세요");
@@ -95,7 +95,7 @@ public class StringCalculator {
 		}
 		
 		//연산 기호를 2개 이상 입력한 경우
-		int signalCount=0;
+		int signalCount = 0;
 		for(int i=0;i<pInput.length();i++) {
 			if(pInput.charAt(i)=='+'||pInput.charAt(i)=='-'||pInput.charAt(i)=='*'||pInput.charAt(i)=='/') {
 				signalCount++;
@@ -156,7 +156,7 @@ public class StringCalculator {
 		double y = Double.parseDouble(input[1]);
 		String signal=input[2];
 		
-		double result=0.0;
+		double result = 0.0;
 		
 		switch(signal) {
 			case "+":
