@@ -136,6 +136,7 @@ public class StringCalculator {
 				
 		String[] result=new String[3];
 		
+		//현재 계산결과값이 0이 아니라면 숫자1에 현재값을 담는다
 		if(currValue!=0.0) {
 			result[0]=String.valueOf(currValue);
 			result[1]=str[1];
