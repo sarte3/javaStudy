@@ -60,9 +60,6 @@ public class StringCalculator {
 				System.out.println("계산 결과 : "+result);
 				continue;
 			}
-			
-		
-
 		}
 	}
 	
