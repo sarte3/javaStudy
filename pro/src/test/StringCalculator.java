@@ -46,7 +46,7 @@ public class StringCalculator {
 			//입력값의 유효성을 검증한다
 			input = validateString(input);
 			
-			//입력값에 따라 기능, 연산을 ㅅ ㅜ행한다
+			//입력값에 따라 기능, 연산을 수행한다
 			if(input.equals("wrongInput")) {
 				continue;
 			}else if(input.equals("C")){
