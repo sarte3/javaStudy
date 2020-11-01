@@ -17,9 +17,7 @@ public class StringCalculator {
 	public static void main(String[] args) {
 
 		StringCalculator sCalc = new StringCalculator();
-		
-		sCalc = new StringCalculator();
-		
+				
 		sCalc.run();
 		
 	}
@@ -173,7 +171,6 @@ public class StringCalculator {
 			case "/":
 				result = divide(x, y);
 				break;
-		
 		}
 		
 		return result;
