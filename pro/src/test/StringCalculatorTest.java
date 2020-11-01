@@ -38,7 +38,7 @@ public class StringCalculatorTest {
 	//공백 검사
 	@Test
 	public void testValidateString() {
-		String result = sCal.validateString("  2+5");
+		String result = sCal.validateString("  2+ 5");
 		assertEquals("2+5", result);
 	}
 

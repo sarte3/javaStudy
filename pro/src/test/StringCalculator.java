@@ -66,9 +66,10 @@ public class StringCalculator {
 	//잘못된 입력을 제거하는 인풋 유효성 검증 메소드
 	public String validateString(String input) {
 
-		//불필요한 공백 제거
+		//불필요한 공백 제거, 잘못된 상황을 리턴하는 msg 변수 선언과 값 할당
 		String pInput = input.trim();
 		pInput = input.replaceAll(" ", "");
+		String msg="wrongInput";
 		
 		//숫자와 소수점, 기호, 단축키를 제외한 문자는 잘못된 입력으로 간주한다
 		for(int i=0;i<pInput.length();i++) {
@@ -79,7 +80,6 @@ public class StringCalculator {
 			} else if(!(pInput.charAt(i)>='0'&&pInput.charAt(i)<='9'||
 					pInput.charAt(i)=='+'||pInput.charAt(i)=='-'||pInput.charAt(i)=='*'||pInput.charAt(i)=='/'||pInput.charAt(i)=='.')) {
 				System.out.println("잘못된 입력입니다");
-				String msg="wrongInput";
 				return msg;
 			}
 		}
@@ -87,7 +87,6 @@ public class StringCalculator {
 		//연산 기호를 입력하지 않은 경우
 		if(pInput.indexOf('+')==-1&&pInput.indexOf('-')==-1&&pInput.indexOf('*')==-1&&pInput.indexOf('/')==-1) {
 			System.out.println("연산 기호를 입력하세요");
-			String msg="wrongInput";
 			return msg;
 		}
 		
@@ -100,7 +99,6 @@ public class StringCalculator {
 		}
 		if(signalCount>1) {
 			System.out.println("연산 기호는 한 번만 입력하세요");
-			String msg="wrongInput";
 			return msg;
 		}
 		
