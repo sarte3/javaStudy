@@ -47,11 +47,11 @@ public class StringCalculator {
 			//입력값에 따라 기능, 연산을 수행한다
 			if(input.equals("wrongInput")) {
 				continue;
-			}else if(input.equals("C")){
+			}else if(input.equals("C")||input.equals("c")){
 				currValue = 0.0;
 				System.out.println("현재값이 0으로 초기화 되었습니다");
 				continue;
-			}else if(input.equals("Q")){
+			}else if(input.equals("Q")||input.equals("q")){
 				System.out.println("계산기를 종료합니다");
 				System.exit(0);
 			}else {
@@ -74,11 +74,11 @@ public class StringCalculator {
 		//숫자와 소수점, 기호, 단축키를 제외한 문자는 잘못된 입력으로 간주한다
 		for(int i=0;i<pInput.length();i++) {
 			//단축키 값이 입력되면 그 키를 리턴한다
-			if(pInput.charAt(i)=='C'||pInput.charAt(i)=='Q') {
-				return String.valueOf(pInput.charAt(i));
-				
-			} else if(!(pInput.charAt(i)>='0'&&pInput.charAt(i)<='9'||
-					pInput.charAt(i)=='+'||pInput.charAt(i)=='-'||pInput.charAt(i)=='*'||pInput.charAt(i)=='/'||pInput.charAt(i)=='.')) {
+			char ch = pInput.charAt(i);
+			if(ch=='C'||ch=='Q'||ch=='c'||ch=='q') {
+				return String.valueOf(ch);
+			//숫자와 소수점, 기호를 제외한 문자는 잘못된 입력으로 처리한다	
+			} else if(!(Character.isDigit(ch)||ch=='+'||ch=='-'||ch=='*'||ch=='/'||ch=='.')) {
 				System.out.println("잘못된 입력입니다");
 				return msg;
 			}
@@ -93,7 +93,8 @@ public class StringCalculator {
 		//연산 기호를 2개 이상 입력한 경우
 		int signalCount = 0;
 		for(int i=0;i<pInput.length();i++) {
-			if(pInput.charAt(i)=='+'||pInput.charAt(i)=='-'||pInput.charAt(i)=='*'||pInput.charAt(i)=='/') {
+			char ch=pInput.charAt(i);
+			if(ch=='+'||ch=='-'||ch=='*'||ch=='/') {
 				signalCount++;
 			}
 		}
