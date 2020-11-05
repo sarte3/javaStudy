@@ -6,7 +6,7 @@ package ch08;
  *  배열값을 읽기 전에 배열의 길이를 먼저 조사한다
  *  => 실행 매개값이 없거나 부족할 경우 조건문을 이용해서 사용자에게 실행 방법을 알려준다
  */
-
+//실행 에러의 대표적인 예 : ArrayIndexOutOfBoundsException
 public class ArrayIndexOutOfBoundsException01 {
 
 	public static void main(String[] args) {
