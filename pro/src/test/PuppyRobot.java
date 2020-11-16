@@ -3,6 +3,15 @@ package test;
 public class PuppyRobot {
 
 	private String _name;
+	private static final int PUPPY_EAT=0;
+	private static final int PUPPY_STOP=1;
+	private static final int PUPPY_JUMP=2;
+	
+	PuppyRobot(){}
+	
+	public PuppyRobot(String _name){
+		this._name = _name;
+	}
 	
 	public void eat() {
 		System.out.println(_name+"이(가) 먹이를 먹어요");
@@ -20,13 +29,13 @@ public class PuppyRobot {
 		
 		switch(num) {
 		
-			case 0:
+			case PUPPY_EAT:
 				eat();
 				break;
-			case 1:
+			case PUPPY_STOP:
 				stop();
 				break;
-			case 2:
+			case PUPPY_JUMP:
 				jump();
 				break;
 			default:
