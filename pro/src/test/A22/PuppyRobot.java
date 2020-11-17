@@ -1,11 +1,9 @@
-package test;
+package test.A22;
 
 public class PuppyRobot {
 
 	private String _name;
-	public static final int PUPPY_EAT=0;
-	public static final int PUPPY_STOP=1;
-	public static final int PUPPY_JUMP=2;
+
 	
 	PuppyRobot(){}
 	
@@ -29,13 +27,13 @@ public class PuppyRobot {
 		
 		switch(num) {
 		
-			case PUPPY_EAT:
+			case 0:
 				eat();
 				break;
-			case PUPPY_STOP:
+			case 1:
 				stop();
 				break;
-			case PUPPY_JUMP:
+			case 2:
 				jump();
 				break;
 			default:
